@@ -1,0 +1,16 @@
+# Clone the Commando VM repository to D:\Downloads folder
+cd D:\
+git clone https://github.com/fireeye/commando-vm.git %userprofile%\Downloads\commando-vm
+
+# Navigate to the Commando VM folder
+cd %userprofile%\Downloads\commando-vm\commando-vm-master\commando-vm-master\
+
+# Edit the profile.json file by removing or adding tools in the "packages" section
+# You can use Notepad or any text editor to make the changes
+notepad .\profile.json
+
+# Enable PowerShell script execution
+Set-ExecutionPolicy Unrestricted -f
+
+# Install the Commando VM with the customized profile.json file
+.\install.ps1 -profile_file .\profile.json
